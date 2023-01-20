@@ -29,4 +29,3 @@ struct CharacterModel : Decodable {
     let image : String
     let episode : [String]
 }
-
