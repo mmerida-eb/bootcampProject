@@ -10,9 +10,11 @@ import UIKit
 class MainView: UIViewController {
 
     @IBOutlet weak var characterTable: UITableView!
+    var newConnection = CharacterConectionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newConnection.getCharacterList()
         // Do any additional setup after loading the view.
     }
 
@@ -25,4 +27,18 @@ class MainView: UIViewController {
     @IBAction func nextButtonPressed(_ sender: UIButton) {
     }
 }
+
+extension MainView : UITableViewDelegate , UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tableViewCell = tableView.dequeueReusableCell(withIdentifier:"character")
+        return tableViewCell!
+    }
+    
+}
+
+
 

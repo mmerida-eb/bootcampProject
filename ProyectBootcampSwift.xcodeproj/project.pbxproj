@@ -16,6 +16,8 @@
 		93ACF682297824A700EDA8C8 /* ProyectBootcampSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ACF681297824A700EDA8C8 /* ProyectBootcampSwiftTests.swift */; };
 		93ACF68C297824A700EDA8C8 /* ProyectBootcampSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ACF68B297824A700EDA8C8 /* ProyectBootcampSwiftUITests.swift */; };
 		93ACF68E297824A700EDA8C8 /* ProyectBootcampSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ACF68D297824A700EDA8C8 /* ProyectBootcampSwiftUITestsLaunchTests.swift */; };
+		93C8A225297ADB770084F7FE /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8A224297ADB770084F7FE /* CharacterModel.swift */; };
+		93C8A228297ADBCE0084F7FE /* NetworkingConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8A227297ADBCE0084F7FE /* NetworkingConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		93ACF687297824A700EDA8C8 /* ProyectBootcampSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProyectBootcampSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93ACF68B297824A700EDA8C8 /* ProyectBootcampSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectBootcampSwiftUITests.swift; sourceTree = "<group>"; };
 		93ACF68D297824A700EDA8C8 /* ProyectBootcampSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProyectBootcampSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		93C8A224297ADB770084F7FE /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		93C8A227297ADBCE0084F7FE /* NetworkingConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		93ACF69A297824D400EDA8C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				93C8A224297ADB770084F7FE /* CharacterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 		93ACF69C297824DF00EDA8C8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				93C8A227297ADBCE0084F7FE /* NetworkingConnection.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -283,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				93ACF66F297824A400EDA8C8 /* MainView.swift in Sources */,
+				93C8A225297ADB770084F7FE /* CharacterModel.swift in Sources */,
+				93C8A228297ADBCE0084F7FE /* NetworkingConnection.swift in Sources */,
 				93ACF66B297824A400EDA8C8 /* AppDelegate.swift in Sources */,
 				93ACF66D297824A400EDA8C8 /* SceneDelegate.swift in Sources */,
 			);
