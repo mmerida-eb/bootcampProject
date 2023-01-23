@@ -8,8 +8,8 @@
 import Foundation
 
 struct ApiResponse : Decodable {
-    let info: PageInfo
-    let results: [CharacterModel]
+    var info: PageInfo
+    var results: [CharacterModel]
 }
 
 struct PageInfo : Decodable {

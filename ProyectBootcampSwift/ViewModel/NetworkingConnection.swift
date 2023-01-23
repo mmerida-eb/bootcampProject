@@ -17,8 +17,7 @@ struct CharacterConectionManager {
     let characterURL = "https://rickandmortyapi.com/api/character"
     
     var delegate: CharacterListManagerDelegate?
-    
-    
+        
     func getCharacterList(){
         //create url
         if let url = URL(string: characterURL) {
@@ -39,6 +38,28 @@ struct CharacterConectionManager {
             //start the task
             task.resume()
         }
+    }
+    
+    func getCharacterPage(nextPageurl :String) {
+        if let url = URL(string: nextPageurl) {
+            //create URL session
+            let session = URLSession(configuration: .default)
+            //create a task
+            let task = session.dataTask(with: url) { data, response, error in
+                if error != nil{
+                    print(error!)
+                    return
+                }
+                if let safeData = data {
+                    if let CharactersPage = self.parseJSONResponse(characterData: safeData){
+                        delegate?.didUpdateCharacterList(self, CharactersPage)
+                    }
+                }
+            }
+            //start the task
+            task.resume()
+        }
+        
     }
     
     func parseJSONResponse(characterData: Data) -> ApiResponse?{

@@ -12,22 +12,17 @@ class MainView: UIViewController{
     @IBOutlet weak var characterTable: UITableView!
     var newConnection = CharacterConectionManager()
     var pageResponse : ApiResponse? = nil
+    var isCalling = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        characterTable.delegate = self
         newConnection.delegate = self
         characterTable.dataSource = self
         newConnection.getCharacterList()
         // Do any additional setup after loading the view.
     }
 
-    
-    
-    @IBAction func previusButtonPressed(_ sender: UIButton) {
-    }
-    
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
-    }
 }
 
 extension MainView : UITextFieldDelegate {
@@ -50,11 +45,36 @@ extension MainView : UITableViewDelegate , UITableViewDataSource {
         tableViewCell.label.text = characterCell?.name
         return tableViewCell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 }
+
+extension MainView : UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (characterTable.contentSize.height - 100 - scrollView.frame.size.height) && isCalling{
+            isCalling = false
+            newConnection.getCharacterPage(nextPageurl: pageResponse?.info.next ?? "")
+        }
+    }
+}
+
 
 extension MainView : CharacterListManagerDelegate  {
     func didUpdateCharacterList(_ characterConectionManager: CharacterConectionManager, _ characterResponse: ApiResponse) {
-        self.pageResponse = characterResponse
+        if self.pageResponse?.results != nil {
+            self.pageResponse?.info = characterResponse.info
+            self.pageResponse?.results.append(contentsOf: characterResponse.results)
+            DispatchQueue.main.async {
+                self.characterTable.reloadData()
+            }
+            isCalling = true
+        }else {
+            self.pageResponse = characterResponse
+        }
     }
     
     func didFailWithError(error: Error) {
