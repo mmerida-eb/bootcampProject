@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "30132760-3C55-4C0F-9FAD-A7EE61D95BBC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67AB0449-7CB7-4C88-8022-E46465B5B58F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProyectBootcampSwift/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "searchButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4131B87-5CC6-414F-910D-7DE8A2612848"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProyectBootcampSwift/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "searchButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2C2449A-9D6F-47D6-A75C-80873EF1B133"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProyectBootcampSwift/View/MainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MainView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A2C2449A-9D6F-47D6-A75C-80873EF1B133 - 71c3cb1de8f94f74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProyectBootcampSwift.MainView.searchTextField.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ProyectBootcampSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmerida/eventbrite/IOS-Tutorial/ProyectBootcampSwift/ProyectBootcampSwift/View/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "A2C2449A-9D6F-47D6-A75C-80873EF1B133 - 3ec0335762b77b80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProyectBootcampSwift.MainView.searchTextField.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ProyectBootcampSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmerida/eventbrite/IOS-Tutorial/ProyectBootcampSwift/ProyectBootcampSwift/View/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "A2C2449A-9D6F-47D6-A75C-80873EF1B133 - cc4ec8b5d0e53473"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProyectBootcampSwift.MainView.searchTextField.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ProyectBootcampSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmerida/eventbrite/IOS-Tutorial/ProyectBootcampSwift/ProyectBootcampSwift/View/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "A2C2449A-9D6F-47D6-A75C-80873EF1B133 - 18779d2e7aca6161"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProyectBootcampSwift.MainView.searchTextField.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ProyectBootcampSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmerida/eventbrite/IOS-Tutorial/ProyectBootcampSwift/ProyectBootcampSwift/View/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "A2C2449A-9D6F-47D6-A75C-80873EF1B133 - 556a1754ff9def69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProyectBootcampSwift.MainView.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ProyectBootcampSwift.MainView"
+                  moduleName = "ProyectBootcampSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmerida/eventbrite/IOS-Tutorial/ProyectBootcampSwift/ProyectBootcampSwift/View/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "147">
+               </Location>
+               <Location
+                  uuid = "A2C2449A-9D6F-47D6-A75C-80873EF1B133 - 93bec37f9240dad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProyectBootcampSwift.MainView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ProyectBootcampSwift.MainView&gt;"
+                  moduleName = "ProyectBootcampSwift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mmerida/eventbrite/IOS-Tutorial/ProyectBootcampSwift/ProyectBootcampSwift/View/MainView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

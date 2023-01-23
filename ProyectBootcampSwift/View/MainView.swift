@@ -12,10 +12,11 @@ class MainView: UIViewController{
     @IBOutlet weak var characterTable: UITableView!
     var newConnection = CharacterConectionManager()
     var pageResponse : ApiResponse? = nil
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         newConnection.delegate = self
+        characterTable.dataSource = self
         newConnection.getCharacterList()
         // Do any additional setup after loading the view.
     }
@@ -43,17 +44,17 @@ extension MainView : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableViewCell = tableView.dequeueReusableCell(withIdentifier:"character")
-        return tableViewCell!
+        let characterCell = pageResponse?.results[indexPath.row]
+        let tableViewCell = tableView.dequeueReusableCell(withIdentifier:"character", for: indexPath) as! CustomTableViewCell
+        tableViewCell.iconImageView.imageToLoad(urlString: characterCell?.image ?? "")
+        tableViewCell.label.text = characterCell?.name
+        return tableViewCell
     }
-    
 }
 
 extension MainView : CharacterListManagerDelegate  {
     func didUpdateCharacterList(_ characterConectionManager: CharacterConectionManager, _ characterResponse: ApiResponse) {
-        DispatchQueue.main.async {
-            self.pageResponse = characterResponse
-        }
+        self.pageResponse = characterResponse
     }
     
     func didFailWithError(error: Error) {
@@ -62,5 +63,19 @@ extension MainView : CharacterListManagerDelegate  {
     }
 }
 
-
-
+extension UIImageView {
+    func imageToLoad(urlString: String){
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url){
+                if let image = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
