@@ -72,7 +72,7 @@
                                                         <action selector="didTapButton" destination="vyK-sO-Sjv" eventType="touchUpInside" id="fzf-py-Vek"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM1-hj-r4C">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM1-hj-r4C">
                                                     <rect key="frame" x="120" y="21" width="157" height="55"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -135,7 +135,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otT-aU-7YM">
-                                <rect key="frame" x="62" y="69" width="270" height="190"/>
+                                <rect key="frame" x="62" y="69" width="270" height="254"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi8-UN-fYd">
                                 <rect key="frame" x="62" y="693" width="270" height="50"/>
@@ -148,9 +148,9 @@
                                     <action selector="backButtonPressed:" destination="MpN-0e-Gh0" eventType="touchUpInside" id="XAm-Ps-ad3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96T-2c-b0f">
-                                <rect key="frame" x="10" y="299" width="373" height="48"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96T-2c-b0f">
+                                <rect key="frame" x="10" y="363" width="373" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -158,12 +158,11 @@
                         <viewLayoutGuide key="safeArea" id="REh-tn-wKg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="96T-2c-b0f" firstAttribute="top" secondItem="otT-aU-7YM" secondAttribute="bottom" constant="40" id="B0S-42-nmK"/>
                             <constraint firstItem="fi8-UN-fYd" firstAttribute="leading" secondItem="REh-tn-wKg" secondAttribute="leading" constant="62" id="Fbj-YY-f3J"/>
                             <constraint firstItem="REh-tn-wKg" firstAttribute="trailing" secondItem="96T-2c-b0f" secondAttribute="trailing" constant="10" id="Hmv-rG-WVp"/>
                             <constraint firstItem="REh-tn-wKg" firstAttribute="trailing" secondItem="fi8-UN-fYd" secondAttribute="trailing" constant="61" id="NX2-J6-Hmc"/>
-                            <constraint firstItem="fi8-UN-fYd" firstAttribute="top" secondItem="96T-2c-b0f" secondAttribute="bottom" constant="346" id="SQX-ob-S90"/>
                             <constraint firstItem="96T-2c-b0f" firstAttribute="leading" secondItem="REh-tn-wKg" secondAttribute="leading" constant="10" id="XBm-N7-D8m"/>
+                            <constraint firstItem="fi8-UN-fYd" firstAttribute="top" secondItem="96T-2c-b0f" secondAttribute="bottom" constant="294" id="jFw-gU-jwj"/>
                             <constraint firstItem="96T-2c-b0f" firstAttribute="top" secondItem="otT-aU-7YM" secondAttribute="bottom" constant="40" id="llV-Tw-zWA"/>
                             <constraint firstItem="otT-aU-7YM" firstAttribute="top" secondItem="REh-tn-wKg" secondAttribute="top" constant="10" id="oWl-cH-GI5"/>
                             <constraint firstItem="otT-aU-7YM" firstAttribute="leading" secondItem="REh-tn-wKg" secondAttribute="leading" constant="62" id="u8w-Ta-G8Y"/>
