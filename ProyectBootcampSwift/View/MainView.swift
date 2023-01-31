@@ -13,7 +13,7 @@ class MainView: UIViewController{
     var newConnection = CharacterConectionManager()
     var pageResponse : ApiResponse? = nil
     var isCalling = true
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         characterTable.delegate = self
@@ -28,6 +28,7 @@ class MainView: UIViewController{
 extension MainView : UITextFieldDelegate {
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        
     }
     
 }
@@ -41,6 +42,8 @@ extension MainView : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let characterCell = pageResponse?.results[indexPath.row]
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier:"character", for: indexPath) as! CustomTableViewCell
+        tableViewCell.delegate = self
+        tableViewCell.characterToShow = characterCell
         tableViewCell.iconImageView.imageToLoad(urlString: characterCell?.image ?? "")
         tableViewCell.label.text = characterCell?.name
         return tableViewCell
@@ -80,6 +83,12 @@ extension MainView : CharacterListManagerDelegate  {
     func didFailWithError(error: Error) {
         print("adios")
         print(error)
+    }
+}
+
+extension MainView : CustomTableViewCellDelegate{
+    func didTapButton(with characterToShow: CharacterModel?) {
+        print(characterToShow!)
     }
 }
 

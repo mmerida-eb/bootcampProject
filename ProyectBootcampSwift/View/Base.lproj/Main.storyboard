@@ -60,8 +60,20 @@
                                                         <constraint firstAttribute="height" constant="80" id="lMG-3j-Adf"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UO-rp-zYw">
+                                                    <rect key="frame" x="287" y="31" width="76" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="76" id="434-8t-BLU"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="gray" title="Details"/>
+                                                    <connections>
+                                                        <action selector="didTapButton" destination="vyK-sO-Sjv" eventType="touchUpInside" id="fzf-py-Vek"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM1-hj-r4C">
-                                                    <rect key="frame" x="120" y="21" width="223" height="55"/>
+                                                    <rect key="frame" x="120" y="21" width="157" height="55"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,15 +81,19 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cM1-hj-r4C" secondAttribute="bottom" constant="10" id="32W-lz-bil"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cM1-hj-r4C" secondAttribute="trailing" constant="10" id="7Q6-l7-jvq"/>
                                                 <constraint firstItem="CyA-xX-2bk" firstAttribute="top" secondItem="9mx-nn-m8K" secondAttribute="top" constant="10" id="Bnc-Gm-xa0"/>
+                                                <constraint firstAttribute="bottom" secondItem="2UO-rp-zYw" secondAttribute="bottom" constant="31" id="BvB-xG-vdD"/>
+                                                <constraint firstItem="2UO-rp-zYw" firstAttribute="leading" secondItem="cM1-hj-r4C" secondAttribute="trailing" constant="10" id="N6v-tw-Hu6"/>
                                                 <constraint firstItem="CyA-xX-2bk" firstAttribute="leading" secondItem="9mx-nn-m8K" secondAttribute="leading" constant="10" id="UMn-E4-GEd"/>
                                                 <constraint firstItem="cM1-hj-r4C" firstAttribute="leading" secondItem="CyA-xX-2bk" secondAttribute="trailing" constant="10" id="W4n-Us-MWV"/>
+                                                <constraint firstAttribute="trailing" secondItem="2UO-rp-zYw" secondAttribute="trailing" constant="10" id="i4h-3P-9Xo"/>
                                                 <constraint firstItem="cM1-hj-r4C" firstAttribute="top" secondItem="9mx-nn-m8K" secondAttribute="topMargin" constant="10" id="l9L-N5-HsH"/>
+                                                <constraint firstItem="2UO-rp-zYw" firstAttribute="top" secondItem="9mx-nn-m8K" secondAttribute="top" constant="31" id="n5O-qN-x0p"/>
                                                 <constraint firstAttribute="bottom" secondItem="CyA-xX-2bk" secondAttribute="bottom" constant="10" id="xZy-4P-vQU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="button" destination="2UO-rp-zYw" id="Pkx-4U-nHh"/>
                                             <outlet property="iconImageView" destination="CyA-xX-2bk" id="FcX-YI-KDs"/>
                                             <outlet property="label" destination="cM1-hj-r4C" id="V5T-so-WVA"/>
                                         </connections>
