@@ -119,11 +119,66 @@
                     </view>
                     <connections>
                         <outlet property="characterTable" destination="LT2-1g-BgZ" id="UBv-Lt-p9F"/>
+                        <segue destination="MpN-0e-Gh0" kind="presentation" identifier="goToDetails" id="6cb-po-Xlz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="71g-0Y-hhw">
+            <objects>
+                <viewController id="MpN-0e-Gh0" customClass="DetailViewController" customModule="ProyectBootcampSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dt-JB-LmT" customClass="Detail">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="otT-aU-7YM">
+                                <rect key="frame" x="62" y="69" width="270" height="190"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi8-UN-fYd">
+                                <rect key="frame" x="62" y="693" width="270" height="50"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Back">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="MpN-0e-Gh0" eventType="touchUpInside" id="XAm-Ps-ad3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96T-2c-b0f">
+                                <rect key="frame" x="10" y="299" width="373" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="REh-tn-wKg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="96T-2c-b0f" firstAttribute="top" secondItem="otT-aU-7YM" secondAttribute="bottom" constant="40" id="B0S-42-nmK"/>
+                            <constraint firstItem="fi8-UN-fYd" firstAttribute="leading" secondItem="REh-tn-wKg" secondAttribute="leading" constant="62" id="Fbj-YY-f3J"/>
+                            <constraint firstItem="REh-tn-wKg" firstAttribute="trailing" secondItem="96T-2c-b0f" secondAttribute="trailing" constant="10" id="Hmv-rG-WVp"/>
+                            <constraint firstItem="REh-tn-wKg" firstAttribute="trailing" secondItem="fi8-UN-fYd" secondAttribute="trailing" constant="61" id="NX2-J6-Hmc"/>
+                            <constraint firstItem="fi8-UN-fYd" firstAttribute="top" secondItem="96T-2c-b0f" secondAttribute="bottom" constant="346" id="SQX-ob-S90"/>
+                            <constraint firstItem="96T-2c-b0f" firstAttribute="leading" secondItem="REh-tn-wKg" secondAttribute="leading" constant="10" id="XBm-N7-D8m"/>
+                            <constraint firstItem="96T-2c-b0f" firstAttribute="top" secondItem="otT-aU-7YM" secondAttribute="bottom" constant="40" id="llV-Tw-zWA"/>
+                            <constraint firstItem="otT-aU-7YM" firstAttribute="top" secondItem="REh-tn-wKg" secondAttribute="top" constant="10" id="oWl-cH-GI5"/>
+                            <constraint firstItem="otT-aU-7YM" firstAttribute="leading" secondItem="REh-tn-wKg" secondAttribute="leading" constant="62" id="u8w-Ta-G8Y"/>
+                            <constraint firstAttribute="bottom" secondItem="fi8-UN-fYd" secondAttribute="bottom" constant="40" id="wFq-LS-Hm4"/>
+                            <constraint firstItem="REh-tn-wKg" firstAttribute="trailing" secondItem="otT-aU-7YM" secondAttribute="trailing" constant="61" id="zLR-o3-GB9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageCharacter" destination="otT-aU-7YM" id="BRe-kE-ALj"/>
+                        <outlet property="nameCharacter" destination="96T-2c-b0f" id="389-st-ixY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25a-zH-1yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1278.6259541984732" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

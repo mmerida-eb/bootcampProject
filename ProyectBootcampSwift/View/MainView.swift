@@ -13,6 +13,7 @@ class MainView: UIViewController{
     var newConnection = CharacterConectionManager()
     var pageResponse : ApiResponse? = nil
     var isCalling = true
+    var characterToDetail :CharacterModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,8 +88,18 @@ extension MainView : CharacterListManagerDelegate  {
 }
 
 extension MainView : CustomTableViewCellDelegate{
+    
     func didTapButton(with characterToShow: CharacterModel?) {
+        self.characterToDetail = characterToShow ?? nil
+        self.performSegue(withIdentifier: "goToDetails", sender: self)
         print(characterToShow!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetails" {
+            let destinationVC = segue.destination as! DetailViewController
+            destinationVC.characterToShow = self.characterToDetail
+        }
     }
 }
 
