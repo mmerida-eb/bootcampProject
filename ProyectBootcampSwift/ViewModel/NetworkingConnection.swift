@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CharacterListManagerDelegate {
-    func didUpdateCharacterList(_ characterConectionManager:CharacterConectionManager, _ characterResponse: ApiResponse)
+    func didUpdateCharacterList(_ characterConectionManager:CharacterConectionManager, _ characterResponse: ApiResponse, _ name:String?)
     func didFailWithError(error:Error)
 }
 
@@ -17,10 +17,15 @@ struct CharacterConectionManager {
     let characterURL = "https://rickandmortyapi.com/api/character"
     
     var delegate: CharacterListManagerDelegate?
-        
-    func getCharacterList(){
-        //create url
-        if let url = URL(string: characterURL) {
+    
+    
+    func getCharacterList(_ name: String?){
+        var urlWithParameters = "https://rickandmortyapi.com/api/character"
+        if name != ""{
+            urlWithParameters += "/?name=\(name!.replacingOccurrences(of: " ", with: "%"))"
+        }
+        print(urlWithParameters)
+        if let url = URL(string: urlWithParameters) {
             //create URL session
             let session = URLSession(configuration: .default)
             //create a task
@@ -31,7 +36,7 @@ struct CharacterConectionManager {
                 }
                 if let safeData = data {
                     if let CharactersPage = self.parseJSONResponse(characterData: safeData){
-                        delegate?.didUpdateCharacterList(self, CharactersPage)
+                        delegate?.didUpdateCharacterList(self, CharactersPage, name)
                     }
                 }
             }
@@ -52,7 +57,7 @@ struct CharacterConectionManager {
                 }
                 if let safeData = data {
                     if let CharactersPage = self.parseJSONResponse(characterData: safeData){
-                        delegate?.didUpdateCharacterList(self, CharactersPage)
+                        delegate?.didUpdateCharacterList(self, CharactersPage,"")
                     }
                 }
             }

@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="40"/>
                                         <color key="backgroundColor" systemColor="systemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOE-4q-gRV">
                                         <rect key="frame" x="333" y="0.99999999999999645" width="40" height="38.333333333333329"/>
@@ -104,6 +104,7 @@
                     <navigationItem key="navigationItem" id="fac-xg-828"/>
                     <connections>
                         <outlet property="characterTable" destination="LT2-1g-BgZ" id="UBv-Lt-p9F"/>
+                        <outlet property="searchTextField" destination="3Ii-6L-pij" id="9ca-SS-nnF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

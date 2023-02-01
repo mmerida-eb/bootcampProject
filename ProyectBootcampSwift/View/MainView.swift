@@ -15,13 +15,16 @@ class MainView: UIViewController{
     var isCalling = true
     var characterToDetail :CharacterModel?
 
+    @IBOutlet weak var searchTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Character List"
         characterTable.delegate = self
         newConnection.delegate = self
         characterTable.dataSource = self
-        newConnection.getCharacterList()
+        newConnection.getCharacterList("")
+        searchTextField.delegate = self 
     }
     
 
@@ -31,9 +34,22 @@ class MainView: UIViewController{
 extension MainView : UITextFieldDelegate {
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        
+        searchTextField.endEditing(true)
+        let characterName = searchTextField.text
+        newConnection.getCharacterList(characterName)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != ""{
+            return true
+        }
+        return false
+    }
 }
 
 
@@ -76,10 +92,14 @@ extension MainView : UIScrollViewDelegate {
 
 
 extension MainView : CharacterListManagerDelegate  {
-    func didUpdateCharacterList(_ characterConectionManager: CharacterConectionManager, _ characterResponse: ApiResponse) {
+    func didUpdateCharacterList(_ characterConectionManager: CharacterConectionManager, _ characterResponse: ApiResponse,_ name:String?) {
         if self.pageResponse?.results != nil {
             self.pageResponse?.info = characterResponse.info
-            self.pageResponse?.results.append(contentsOf: characterResponse.results)
+            if name != ""{
+                self.pageResponse?.results = characterResponse.results
+            } else {
+                self.pageResponse?.results.append(contentsOf: characterResponse.results)
+            }
             DispatchQueue.main.async {
                 self.characterTable.reloadData()
             }
