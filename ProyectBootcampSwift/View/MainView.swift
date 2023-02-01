@@ -17,12 +17,14 @@ class MainView: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Character List"
         characterTable.delegate = self
         newConnection.delegate = self
         characterTable.dataSource = self
         newConnection.getCharacterList()
-        // Do any additional setup after loading the view.
     }
+    
+
 
 }
 
@@ -43,7 +45,6 @@ extension MainView : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let characterCell = pageResponse?.results[indexPath.row]
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier:"character", for: indexPath) as! CustomTableViewCell
-        tableViewCell.delegate = self
         tableViewCell.characterToShow = characterCell
         tableViewCell.iconImageView.imageToLoad(urlString: characterCell?.image ?? "")
         tableViewCell.label.text = characterCell?.name
@@ -52,6 +53,13 @@ extension MainView : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mapViewControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        mapViewControllerObj.characterToShow = pageResponse?.results[indexPath.row]
+        
+        self.navigationController?.pushViewController(mapViewControllerObj, animated: true)
     }
     
 }
@@ -84,22 +92,6 @@ extension MainView : CharacterListManagerDelegate  {
     func didFailWithError(error: Error) {
         print("adios")
         print(error)
-    }
-}
-
-extension MainView : CustomTableViewCellDelegate{
-    
-    func didTapButton(with characterToShow: CharacterModel?) {
-        self.characterToDetail = characterToShow ?? nil
-        self.performSegue(withIdentifier: "goToDetails", sender: self)
-        print(characterToShow!)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToDetails" {
-            let destinationVC = segue.destination as! DetailViewController
-            destinationVC.characterToShow = self.characterToDetail
-        }
     }
 }
 
