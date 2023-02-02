@@ -8,12 +8,14 @@
 import UIKit
 
 class MainView: UIViewController{
-    
+
     @IBOutlet weak var characterTable: UITableView!
     var newConnection = CharacterConectionManager()
     var pageResponse : ApiResponse? = nil
     var isCalling = true
     var characterToDetail :CharacterModel?
+    var genderSelected :String? = ""
+    var statusSelected :String? = ""
 
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -24,11 +26,16 @@ class MainView: UIViewController{
         newConnection.delegate = self
         characterTable.dataSource = self
         newConnection.getCharacterList("")
-        searchTextField.delegate = self 
+        searchTextField.delegate = self
     }
     
 
-
+    @IBAction func filterButtonPressed(_ sender: UIButton) {
+        let mapViewControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "SearchFilterController") as! SearchFilterController
+        
+        self.navigationController?.pushViewController(mapViewControllerObj, animated: true)
+    }
+    
 }
 
 extension MainView : UITextFieldDelegate {
@@ -114,6 +121,7 @@ extension MainView : CharacterListManagerDelegate  {
         print(error)
     }
 }
+
 
 extension UIImageView {
     func imageToLoad(urlString: String){

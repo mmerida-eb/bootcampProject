@@ -22,8 +22,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PLn-Yn-SJT">
                                 <rect key="frame" x="10" y="103" width="373" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Character" borderStyle="roundedRect" placeholder="Search" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3Ii-6L-pij">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HI-Mb-upu">
+                                        <rect key="frame" x="0.0" y="1" width="40" height="38.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="2Cp-LD-7c8"/>
+                                            <constraint firstAttribute="height" constant="40" id="5yD-U8-IdC"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" backgroundImage="person.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="filterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YXF-sw-2H3"/>
+                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PP0-Qw-mBX"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3Ii-6L-pij">
+                                        <rect key="frame" x="50" y="0.0" width="273" height="40"/>
                                         <color key="backgroundColor" systemColor="systemFillColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go"/>
@@ -111,6 +124,92 @@
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
         </scene>
+        <!--Filters-->
+        <scene sceneID="Nks-h1-QU4">
+            <objects>
+                <viewController storyboardIdentifier="SearchFilterController" id="WCI-7h-jOa" customClass="SearchFilterController" customModule="ProyectBootcampSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WnO-xH-CrE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSi-oC-k1M">
+                                <rect key="frame" x="157" y="159" width="79" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ID4-SO-LIc">
+                                <rect key="frame" x="151" y="303.66666666666669" width="91" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-4x-Xf0">
+                                <rect key="frame" x="17" y="222.66666666666666" width="359" height="32"/>
+                                <segments>
+                                    <segment title="Alive"/>
+                                    <segment title="Dead"/>
+                                    <segment title="Unknown"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyP-kH-B9Z">
+                                <rect key="frame" x="41" y="743.66666666666663" width="311" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Search">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE6-tU-3Ru">
+                                <rect key="frame" x="41" y="743" width="311" height="34.333333333333371"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Search">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="WCI-7h-jOa" eventType="touchUpInside" id="zTw-e3-hx3"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RPM-km-69r">
+                                <rect key="frame" x="16" y="357.66666666666669" width="361" height="32"/>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                    <segment title="Genderless"/>
+                                    <segment title="unknown"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7pn-xp-LbD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7pn-xp-LbD" firstAttribute="trailing" secondItem="Ch8-4x-Xf0" secondAttribute="trailing" constant="17" id="0Np-XT-eVe"/>
+                            <constraint firstItem="YyP-kH-B9Z" firstAttribute="leading" secondItem="7pn-xp-LbD" secondAttribute="leading" constant="41" id="2Pk-2o-V6D"/>
+                            <constraint firstItem="RPM-km-69r" firstAttribute="top" secondItem="ID4-SO-LIc" secondAttribute="bottom" constant="20" id="DWH-TU-FIs"/>
+                            <constraint firstItem="Ch8-4x-Xf0" firstAttribute="top" secondItem="XSi-oC-k1M" secondAttribute="bottom" constant="30" id="IOj-Uv-lqa"/>
+                            <constraint firstItem="7pn-xp-LbD" firstAttribute="trailing" secondItem="RPM-km-69r" secondAttribute="trailing" constant="16" id="JDx-0g-jF2"/>
+                            <constraint firstItem="7pn-xp-LbD" firstAttribute="trailing" secondItem="YyP-kH-B9Z" secondAttribute="trailing" constant="41" id="LhC-aC-pIt"/>
+                            <constraint firstItem="ID4-SO-LIc" firstAttribute="leading" secondItem="7pn-xp-LbD" secondAttribute="leading" constant="151" id="SEm-OO-Owo"/>
+                            <constraint firstItem="7pn-xp-LbD" firstAttribute="trailing" secondItem="ID4-SO-LIc" secondAttribute="trailing" constant="151" id="b6f-Fq-QjX"/>
+                            <constraint firstItem="Ch8-4x-Xf0" firstAttribute="leading" secondItem="7pn-xp-LbD" secondAttribute="leading" constant="17" id="dCz-Ze-Bsj"/>
+                            <constraint firstItem="RPM-km-69r" firstAttribute="leading" secondItem="7pn-xp-LbD" secondAttribute="leading" constant="16" id="ddz-g7-exb"/>
+                            <constraint firstItem="7pn-xp-LbD" firstAttribute="trailing" secondItem="XSi-oC-k1M" secondAttribute="trailing" constant="157" id="dtF-3l-NyJ"/>
+                            <constraint firstItem="7pn-xp-LbD" firstAttribute="bottom" secondItem="YyP-kH-B9Z" secondAttribute="bottom" constant="40" id="ioj-2h-08S"/>
+                            <constraint firstItem="XSi-oC-k1M" firstAttribute="top" secondItem="7pn-xp-LbD" secondAttribute="top" constant="100" id="r7w-4K-IAV"/>
+                            <constraint firstItem="ID4-SO-LIc" firstAttribute="top" secondItem="Ch8-4x-Xf0" secondAttribute="bottom" constant="50" id="sp2-xE-3Tw"/>
+                            <constraint firstItem="XSi-oC-k1M" firstAttribute="leading" secondItem="7pn-xp-LbD" secondAttribute="leading" constant="157" id="xB7-VU-hwA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filters" id="F8L-6D-z4Z"/>
+                    <connections>
+                        <outlet property="genderSelected" destination="RPM-km-69r" id="Isl-51-yII"/>
+                        <outlet property="statusSelected" destination="Ch8-4x-Xf0" id="OHz-uZ-I03"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCT-Hg-Zva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.885496183206" y="-788.0281690140846"/>
+        </scene>
         <!--Character Details-->
         <scene sceneID="71g-0Y-hhw">
             <objects>
@@ -185,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25a-zH-1yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2205.3435114503818" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2079" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6VJ-1s-YMP">
@@ -209,6 +308,7 @@
     <resources>
         <image name="background" width="1080" height="1920"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
