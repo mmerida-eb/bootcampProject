@@ -79,10 +79,12 @@ extension MainView : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let mapViewControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        /*let mapViewControllerObj = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         mapViewControllerObj.characterToShow = pageResponse?.results[indexPath.row]
-        
-        self.navigationController?.pushViewController(mapViewControllerObj, animated: true)
+        */
+        let storyboard = UIStoryboard(name: "DetailStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        storyboard.characterToShow = pageResponse?.results[indexPath.row]
+        self.navigationController?.pushViewController(storyboard, animated: true)
     }
     
 }
