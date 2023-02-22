@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainView: UIViewController{
+class MainView: UIViewController, Storyboarded{
 
     @IBOutlet weak var characterTable: UITableView!
     var newConnection = CharacterConectionManager()

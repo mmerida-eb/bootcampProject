@@ -24,6 +24,7 @@
 		93C8A228297ADBCE0084F7FE /* NetworkingConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8A227297ADBCE0084F7FE /* NetworkingConnection.swift */; };
 		93D898BA29A6AE0D00324866 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D898B929A6AE0D00324866 /* Coordinator.swift */; };
 		93D898BC29A6AE8300324866 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D898BB29A6AE8300324866 /* Storyboarded.swift */; };
+		93D898BE29A6AFE900324866 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D898BD29A6AFE900324866 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		93C8A227297ADBCE0084F7FE /* NetworkingConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConnection.swift; sourceTree = "<group>"; };
 		93D898B929A6AE0D00324866 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		93D898BB29A6AE8300324866 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		93D898BD29A6AFE900324866 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +128,8 @@
 			children = (
 				93D898B829A6ADF900324866 /* Coordinator */,
 				93826FD22992B80500E1F828 /* DetailView */,
-				93ACF69C297824DF00EDA8C8 /* ViewModel */,
-				93ACF69B297824DB00EDA8C8 /* View */,
+				93ACF69C297824DF00EDA8C8 /* Networking */,
+				93ACF69B297824DB00EDA8C8 /* MainView */,
 				93ACF69A297824D400EDA8C8 /* Model */,
 				93ACF66A297824A400EDA8C8 /* AppDelegate.swift */,
 				93ACF66C297824A400EDA8C8 /* SceneDelegate.swift */,
@@ -163,7 +165,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		93ACF69B297824DB00EDA8C8 /* View */ = {
+		93ACF69B297824DB00EDA8C8 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				939E4AEC297EBDBB00E4783A /* CustomTableViewCell.swift */,
@@ -171,15 +173,15 @@
 				93ACF66E297824A400EDA8C8 /* MainView.swift */,
 				93B9CBF4298C288100E443A0 /* SearchFilterController.swift */,
 			);
-			path = View;
+			path = MainView;
 			sourceTree = "<group>";
 		};
-		93ACF69C297824DF00EDA8C8 /* ViewModel */ = {
+		93ACF69C297824DF00EDA8C8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				93C8A227297ADBCE0084F7FE /* NetworkingConnection.swift */,
 			);
-			path = ViewModel;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		93D898B829A6ADF900324866 /* Coordinator */ = {
@@ -187,6 +189,7 @@
 			children = (
 				93D898B929A6AE0D00324866 /* Coordinator.swift */,
 				93D898BB29A6AE8300324866 /* Storyboarded.swift */,
+				93D898BD29A6AFE900324866 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				93ACF66F297824A400EDA8C8 /* MainView.swift in Sources */,
 				93C8A225297ADB770084F7FE /* CharacterModel.swift in Sources */,
 				93C8A228297ADBCE0084F7FE /* NetworkingConnection.swift in Sources */,
+				93D898BE29A6AFE900324866 /* MainCoordinator.swift in Sources */,
 				93ACF66B297824A400EDA8C8 /* AppDelegate.swift in Sources */,
 				93ACF66D297824A400EDA8C8 /* SceneDelegate.swift in Sources */,
 				93D898BC29A6AE8300324866 /* Storyboarded.swift in Sources */,
