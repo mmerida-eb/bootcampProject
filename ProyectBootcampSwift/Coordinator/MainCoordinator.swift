@@ -18,8 +18,14 @@ class MainCoordinator : Coordinator{
     }
     
     func start() {
-        let vc = UIViewController()
-        navigationController.pushViewController(vc, animated: false)
+        let vc = MainView.instantiate()
+        self.navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func goToDetails(_ characterToShow:CharacterModel ){
+        let vc = DetailViewController.instantiate()
+        vc.characterToShow = characterToShow
+        self.navigationController.pushViewController(vc, animated: false)
     }
     
     
